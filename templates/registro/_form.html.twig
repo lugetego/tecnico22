@@ -162,30 +162,6 @@ blu<div class="row g-3">
 </div>
 <hr class="my-4">
 
-<h4 class="my-4">Postulación</h4>
-
-<div class="row mt-4">
-    <div class="col-6">
-        <p class="fw-light">
-            Seleccionar la Unidad de Apoyo a donde pertenece la plaza de Técnico Académico en la que desea participar.
-        </p>
-
-    </div>
-    <div class="col-6">
-        <label for="unidad" class="form-label">{{ form_label(form.unidad) }}</label>
-        {{ form_widget(form.unidad,{
-            'attr': {'class': 'form-control',
-                'placeholder': 'Seleccionar',
-            } } ) }}
-        <div class="invalid-error">
-            {{ form_errors(form.unidad) }}
-        </div>
-    </div>
-</div>
-
-
-<hr class="my-4">
-
 <button class="w-100 btn btn-primary btn-lg">{{ button_label|default('Enviar solicitud') }}</button>
 
 
