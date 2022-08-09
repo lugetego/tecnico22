@@ -1,0 +1,193 @@
+{{ form_start(form) }}
+<hr class="my-2">
+
+
+<h4 class="mb-3">Datos personales</h4>
+blu<div class="row g-3">
+    {% if form.nombre is defined %}
+        <div class="col-sm-4">
+            <label for="nombre" class="form-label">{{ form_label(form.nombre) }}</label>
+            {{ form_widget(form.nombre,{
+                'attr': {'class': 'form-control',
+                    'placeholder': 'Nombre(s)',
+                } } ) }}
+            <div class="invalid-error">
+                {{ form_errors(form.nombre) }}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="col-sm-4">
+        <label for="paterno" class="form-label">{{ form_label(form.paterno) }}</label>
+        {{ form_widget(form.paterno,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Apellido paterno',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.paterno) }}
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <label for="materno" class="form-label">{{ form_label(form.materno) }}</label>
+        {{ form_widget(form.materno,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Apellido materno',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.materno) }}
+        </div>
+    </div>
+
+    <div class="col-12">
+        <label for="email" class="form-label">{{ form_label(form.email) }}</label>
+        {{ form_widget(form.email,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'user@example.com',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.email) }}
+        </div>
+    </div>
+
+    <div class="col-12">
+        <label for="address" class="form-label">{{ form_label(form.direccion) }}</label>
+        {{ form_widget(form.direccion,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Dirección ',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.direccion) }}
+        </div>
+    </div>
+</div>
+<hr class="my-4">
+
+<h4 class="my-4">Envío de documentos</h4>
+<div class="row">
+    <div class="col-6">
+        <p class="fw-light">
+            <span class="fw-bold">Carta solicitud</span> especificando los motivos del interesado para laborar en el CCM.
+            Incluir en la carta la dirección postal, la dirección de correo electrónico, y el teléfono del solicitante.
+        </p>
+    </div>
+    <div class="col-6">
+        <label for="solicitudFile" class="form-label">{{ form_label(form.solicitudFile) }}</label>
+        {{ form_widget(form.solicitudFile,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Seleccionar archivo',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.solicitudFile) }}
+        </div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-6">
+        <label for="cvFile" class="form-label">{{ form_label(form.cvFile) }}</label>
+        {{ form_widget(form.cvFile,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Seleccionar archivo',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.cvFile) }}
+        </div>
+    </div>
+    <div class="col-6">
+        <label for="comprobanteFile" class="form-label">{{ form_label(form.comprobanteFile) }}</label>
+        {{ form_widget(form.comprobanteFile,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Seleccionar archivo',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.comprobanteFile) }}
+        </div>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-6">
+        <p class="fw-light">
+            <span class="fw-bold">Comprobantes</span> de cursos, certificaciones, experiencia laboral y portafolio de trabajos en los que ha participado.
+            Incluir todos en un solo archivo. Puede también especificar ligas para consulta de la información.
+        </p>
+    </div>
+    <div class="col-6">
+        <label for="cursoFile" class="form-label">{{ form_label(form.cursoFile) }}</label>
+        {{ form_widget(form.cursoFile,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Seleccionar archivo',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.cursoFile) }}
+        </div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-6">
+        <p class="fw-light">
+            Se solicita que proporcione <span class="fw-bold">2 cartas de recomendación</span>.
+        </p>
+        <p class="fw-light">
+            Si en este momento no cuenta con los dos archivos enviarlos posteriormente a
+            webmaster<i class="fas fa-at"></i>matmor.unam.mx antes de la fecha señalada en la convocatoria.
+        </p>
+    </div>
+    <div class="col-6">
+        <label for="ref1File" class="form-label">{{ form_label(form.ref1recomFile) }}</label>
+        {{ form_widget(form.ref1recomFile,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Seleccionar archivo',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.ref1recomFile) }}
+        </div>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-6">
+        <p class="fw-light">
+            &nbsp;
+        </p>
+    </div>
+    <div class="col-6">
+        <label for="ref2File" class="form-label">{{ form_label(form.ref2recomFile) }}</label>
+        {{ form_widget(form.ref2recomFile,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Seleccionar archivo',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.ref2recomFile) }}
+        </div>
+    </div>
+</div>
+<hr class="my-4">
+
+<h4 class="my-4">Postulación</h4>
+
+<div class="row mt-4">
+    <div class="col-6">
+        <p class="fw-light">
+            Seleccionar la Unidad de Apoyo a donde pertenece la plaza de Técnico Académico en la que desea participar.
+        </p>
+
+    </div>
+    <div class="col-6">
+        <label for="unidad" class="form-label">{{ form_label(form.unidad) }}</label>
+        {{ form_widget(form.unidad,{
+            'attr': {'class': 'form-control',
+                'placeholder': 'Seleccionar',
+            } } ) }}
+        <div class="invalid-error">
+            {{ form_errors(form.unidad) }}
+        </div>
+    </div>
+</div>
+
+
+<hr class="my-4">
+
+<button class="w-100 btn btn-primary btn-lg">{{ button_label|default('Enviar solicitud') }}</button>
+
+
+{{ form_widget(form) }}
+{{ form_end(form) }}

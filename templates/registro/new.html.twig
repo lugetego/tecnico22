@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'registro/form_errors.html.twig' %}
+
+{% block title %}Técnico Académico en el CCM{% endblock %}
+
+{% block body %}
+    <div class="container bg-light">
+        <main>
+
+          {#  <div class="alert alert-primary mt-5" role="alert">
+                <h4 class="alert-heading">Recepción de documentos cerrada</h4>
+                <hr>
+                <p>Fecha límite para la recepción de documentos: 14 de enero de 2022.</p>
+            </div>#}
+
+            <div class="py-3">
+                <h2>Instrucciones</h2>
+                <p class="lead">
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item bg-light">Asegúrese de que la información y los archivos que enviará sean los correctos, después de ser enviados ya no podrán ser modificados.</li>
+                    <li class="list-group-item bg-light">La documentación requerida sólo podrá ser recibida por medio de este sistema.</li>
+                    <li class="list-group-item bg-light">Todos los campos son requeridos. Cada uno de los archivos en los siguientes campos deberá ser en formato PDF.</li>
+                    <li class="list-group-item bg-light">Una vez concluido el proceso de registro de documentos, el solicitante recibirá un acuse de recibo. De no recibir dicha notificación o
+                        si se tiene algún problema con el llenado de esta solicitud, el solicitante debe ponerse en contacto al siguiente correo: webmaster<i class="fas fa-at"></i>matmor.unam.mx</li>
+                </ul>
+                </p>
+            </div>
+                    {{ include('registro/_form.html.twig') }}
+        </main>
+
+        <footer class="my-2 pt-2 text-muted text-center text-small">
+            <p class="mb-1">Centro de Ciencias Matemáticas</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="http://matmor.unam.mx/AvisoPrivacidad-CCM.pdf" target="_blank">Aviso de privacidad</a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+{% endblock %}

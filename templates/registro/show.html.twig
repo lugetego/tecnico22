@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Solicitud{% endblock %}
+
+
+{% block body %}
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('registro_index') }}">Solicitudes</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> {{  registro.slug }} </li>
+            </ol>
+        </nav>
+
+        <div class="card border-dark mt-5" style="max-width: 100%">
+{#            <div class="card-header">{{ registro.unidad }}</div>#}
+            <div class="card-body text-dark">
+                <h5 class="card-title">{{ registro.nombre }} {{ registro.paterno }} {{ registro.materno }}</h5>
+                <p class="card-text">
+                <address>
+                    <strong> {{ registro.email }} </strong> <br>
+                    {{ registro.direccion }}
+                </address>
+                </p>
+                <ul class="list-group list-group-horizontal">
+
+                    <li class="list-group-item"><i class="fas fa-file-pdf"></i>
+                        <a href="{{ vich_uploader_asset(registro, 'solicitudFile') }}"  target="_blank">Solicitud</a>
+                    </li>
+                    <li class="list-group-item"><i class="fas fa-file-pdf"></i>
+                        <a href="{{ vich_uploader_asset(registro, 'cvFile') }}"  target="_blank">CV</a>
+                    </li>
+                    <li class="list-group-item"><i class="fas fa-file-pdf"></i>
+                        <a href="{{ vich_uploader_asset(registro, 'comprobanteFile') }}"  target="_blank">Comprobante</a>
+                    </li>
+                    <li class="list-group-item"><i class="fas fa-file-pdf"></i>
+                        <a href="{{ vich_uploader_asset(registro, 'cursoFile') }}"  target="_blank">Probatorios</a>
+                    </li>
+                    <li class="list-group-item"><i class="fas fa-file-pdf"></i>
+                        <a href="{{ vich_uploader_asset(registro, 'ref1recomFile') }}"  target="_blank">Recomendación 1</a>
+                    </li>
+                    <li class="list-group-item"><i class="fas fa-file-pdf"></i>
+                        <a href="{{ vich_uploader_asset(registro, 'ref2recomFile') }}"  target="_blank">Recomendación 2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+{#        <a href="{{ path('registro_edit', {'slug': registro.slug}) }}">edit</a>#}
+
+{#        {{ include('registro/_delete_form.html.twig') }}#}
+
+{#        <div class="d-flex flex-row">#}
+{#            <div {{ stimulus_controller('modal-form', {#}
+{#                formUrl: path('registro_edit', {'slug': registro.slug})#}
+{#            }) }}>#}
+{#                <button#}
+{#                        class="btn btn-primary btn-sm"#}
+{#                        data-action="modal-form#openModal"#}
+{#                >Add+</button>#}
+{#                {{ include('registro/_modal.html.twig', {#}
+{#                    modalTitle: 'Modificar solicitud',#}
+{#                }) }}#}
+{#            </div>#}
+{#        </div>#}
+
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Técnico Académico{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-3">
+
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+            <tr>
+                <th>Solicitante</th>
+                <th>Email</th>
+                <th>Activo</th>
+{#                <th>Unidad</th>#}
+            </tr>
+            </thead>
+            <tbody>
+            {% for registro in registros %}
+                <tr>
+                    <td><a href="{{ path('registro_show', {'slug': registro.slug}) }}">{{ registro.nombre }} {{ registro.paterno }} {{ registro.materno }}</a></td>
+                    <td>{{ registro.email }}</td>
+                    <td>{{ registro.activo ? 'Yes' : 'No' }}</td>
+{#                    <td>{{ registro.unidad }}</td>#}
+{#                    <td>#}
+{#                        <a href="{{ path('registro_show', {'slug': registro.slug}) }}"><i class="fas fa-search-plus"></i></a>#}
+{#                    </td>#}
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="9">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+{#        <a href="{{ path('registro_new') }}">Create new</a>#}
+    </div>
+{% endblock %}
+    {% block javascripts %}
+        {{ parent() }}
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+
+        <script type="application/javascript">
+            $(document).ready(function() {
+                $('#example').DataTable();
+            } );
+        </script>
+
+    {% endblock %}
