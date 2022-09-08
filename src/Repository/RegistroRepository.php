@@ -19,22 +19,22 @@ class RegistroRepository extends ServiceEntityRepository
         parent::__construct($registry, Registro::class);
     }
 
-    // /**
-    //  * @return Registro[] Returns an array of Registro objects
-    //  */
-    /*
-    public function findByExampleField($value)
+     /**
+      * @return Registro[] Returns an array of Registro objects
+      */
+
+    public function findByActivo($value)
     {
         return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+            ->andWhere('r.activo = :val')
             ->setParameter('val', $value)
             ->orderBy('r.id', 'ASC')
-            ->setMaxResults(10)
+            //->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Registro

@@ -23,7 +23,7 @@ class RegistroController extends AbstractController
     public function index(RegistroRepository $registroRepository): Response
     {
         return $this->render('registro/index.html.twig', [
-            'registros' => $registroRepository->findAll(),
+            'registros' => $registroRepository->findByActivo(true),
         ]);
     }
 
