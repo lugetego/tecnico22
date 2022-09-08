@@ -26,7 +26,7 @@
                 <tr>
                     <td><a href="{{ path('registro_show', {'slug': registro.slug}) }}">{{ registro.nombre }} {{ registro.paterno }} {{ registro.materno }}</a></td>
                     <td>{{ registro.email }}</td>
-                    <td>{{ registro.created|localizeddate('long', 'short')}}</td>
+                    <td>{{ registro.created|date }}</td>
                     {#<td>{{ registro.activo ? 'Yes' : 'No' }}</td>#}
 {#                    <td>{{ registro.unidad }}</td>#}
 {#                    <td>#}
