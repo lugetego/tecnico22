@@ -28,7 +28,7 @@ class RegistroRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('r')
             ->andWhere('r.activo = :val')
             ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
+           // ->orderBy('r.id', 'ASC')
             //->setMaxResults(10)
             ->getQuery()
             ->getResult()
